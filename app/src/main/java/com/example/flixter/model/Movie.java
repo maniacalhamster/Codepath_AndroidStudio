@@ -11,14 +11,17 @@ import java.util.List;
 
 public class Movie {
 
-    String baseImageUrl = "https://image.tmdb.org/t/p/";
-    String width = "w500";
+    String baseImageUrl = "https://image.tmdb.org/t/p/%s%s";
+    String posterWidth = "w500";
+    String backdropWidth = "w780";
     String posterPath;
+    String backdropPath;
     String title;
     String overview;
 
     public Movie(JSONObject jsonObject) throws JSONException {
         posterPath = jsonObject.getString("poster_path");
+        backdropPath = jsonObject.getString("backdrop_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
     }
@@ -32,7 +35,11 @@ public class Movie {
     }
 
     public String getPosterPath() {
-        return String.format(baseImageUrl, width, posterPath);
+        return String.format(baseImageUrl, posterWidth, posterPath);
+    }
+
+    public String getBackdropPath() {
+        return String.format(baseImageUrl, backdropWidth, backdropPath);
     }
 
     public String getTitle() {
