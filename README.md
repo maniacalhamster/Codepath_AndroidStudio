@@ -24,7 +24,7 @@ inspiration/emulating the movie review site/app Flixster.
 
 ### App Walkthough GIF
 
-<img src="./demo.gif" <br>
+<img src="./demo.gif" width=250><br>
 
 ### Notes
 
