@@ -13,6 +13,7 @@ import java.util.List;
 @Parcel
 public class Movie {
 
+    int movieId;
     String baseImageUrl = "https://image.tmdb.org/t/p/%s%s";
     String posterWidth = "w500";
     String backdropWidth = "w780";
@@ -30,6 +31,7 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         rating = jsonObject.getDouble("vote_average");
+        movieId = jsonObject.getInt("id");
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -40,9 +42,7 @@ public class Movie {
         return movies;
     }
 
-    public String getPosterPath() {
-        return String.format(baseImageUrl, posterWidth, posterPath);
-    }
+    public String getPosterPath() { return String.format(baseImageUrl, posterWidth, posterPath); }
     public String getBackdropPath() { return String.format(baseImageUrl, backdropWidth, backdropPath); }
     public String getTitle() {
         return title;
@@ -51,4 +51,5 @@ public class Movie {
         return overview;
     }
     public double getRating() { return rating; }
+    public int getMovieId() { return movieId; }
 }
