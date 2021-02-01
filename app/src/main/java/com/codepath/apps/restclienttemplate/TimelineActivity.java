@@ -27,6 +27,7 @@ public class TimelineActivity extends AppCompatActivity {
     List<Tweet> tweets;
     TweetsAdapter adapter;
     SwipeRefreshLayout swipeContainer;
+    EndlessRecyclerViewScrollListener scrollListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +54,31 @@ public class TimelineActivity extends AppCompatActivity {
         // 2: Initialize tweets list and adapter
         tweets = new ArrayList<>();
         adapter = new TweetsAdapter(this, tweets);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         // 3: Recycler view setup: layout manager and adapter
-        rvTweets.setLayoutManager(new LinearLayoutManager(this ));
+        rvTweets.setLayoutManager(layoutManager);
         rvTweets.setAdapter(adapter);
 
+        scrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
+                Log.i(TAG, "onLoadMore: " + page);
+                loadMoreData();
+            }
+        };
+        // Add scroll listener to RecyclerView
+        rvTweets.addOnScrollListener(scrollListener);
+
         populateHomeTimeLine();
+    }
+
+    private void loadMoreData() {
+        // 1: Send an API request to retrieve appropriate paginated data
+        // 2: Deserialize and construct new model objects from the API response
+        // 3: Append the new data objects to the existing set of items inside the array of items
+        // 4: Notify the adapter of the new items made with 'notifyItemRangeInserted()'
+
     }
 
     private void populateHomeTimeLine() {
