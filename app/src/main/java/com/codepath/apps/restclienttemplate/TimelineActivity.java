@@ -74,6 +74,17 @@ public class TimelineActivity extends AppCompatActivity {
     }
 
     private void loadMoreData() {
+        client.getNextPageOfTweets(new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Headers headers, JSON json) {
+                Log.i(TAG, "onSuccess for loadMoreData!" + json.toString());
+            }
+
+            @Override
+            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
+                Log.i(TAG, "onFailure for loadMoreData!", throwable);
+            }
+        }, tweets.get(tweets.size()-1).id);
         // 1: Send an API request to retrieve appropriate paginated data
         // 2: Deserialize and construct new model objects from the API response
         // 3: Append the new data objects to the existing set of items inside the array of items
