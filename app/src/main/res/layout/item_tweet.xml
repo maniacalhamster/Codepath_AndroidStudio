@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
 
     <ImageView
         android:id="@+id/ivProfileImage"
@@ -12,8 +14,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/img_desc" />
+        android:contentDescription="@string/img_desc"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvScreenName"
@@ -24,8 +26,7 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivProfileImage"
         android:text=""
-        tools:text="Marethyu86"
-        />
+        tools:text="Marethyu86" />
 
     <TextView
         android:id="@+id/tvBody"
@@ -36,6 +37,5 @@
         android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/ivProfileImage"
         android:text=""
-        tools:text="Testing tweet body!"
-        />
+        tools:text="Testing tweet body!" />
 </RelativeLayout>
