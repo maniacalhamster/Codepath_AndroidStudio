@@ -2,6 +2,7 @@ package com.codepath.apps.restclienttemplate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 
 import org.json.JSONException;
+import org.parceler.Parcels;
 
 import okhttp3.Headers;
 
@@ -48,7 +50,9 @@ public class ComposeActivity extends AppCompatActivity {
                 if(tweetContent.length() > MAX_TWEET_LENGTH){
                     Toast.makeText(ComposeActivity.this, "Sorry, your tweet is too long", Toast.LENGTH_LONG).show();
                 }
-                Toast.makeText(ComposeActivity.this, tweetContent, Toast.LENGTH_LONG).show();
+                // [! uncomment in case of bugs !]
+                // Toast.makeText(ComposeActivity.this, tweetContent, Toast.LENGTH_LONG).show();
+
                 // Make an API call to twitter to publish the tweet
                 client.publishTweet(tweetContent, new JsonHttpResponseHandler() {
                     @Override
@@ -57,6 +61,14 @@ public class ComposeActivity extends AppCompatActivity {
                         try {
                             Tweet tweet = Tweet.fromJson(json.jsonObject);
                             Log.i(TAG, "Publised tweet says: " + tweet);
+
+                            // prepare data intent
+                            Intent intent = new Intent();
+                            // Pass relevant data back as a result
+                            intent.putExtra("tweet", Parcels.wrap(tweet));
+                            setResult(RESULT_OK, intent);   // set result code and bundle data for response
+
+                            finish();   // closes the activity, pass data to parent
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
