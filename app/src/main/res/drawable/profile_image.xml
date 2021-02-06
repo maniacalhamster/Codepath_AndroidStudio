@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+     Will be hard to see, used a rectangle with dimensions of pfp image
+        to see better when making it/testing.
+     Essentially inscribes the image inside of a circle with width such that the
+        inner circle has a radius of the original length/2.
+     The math follows: original image with length s needs to be transformed into
+        circle image with radius r = s/2. The larger circle that will inscribe
+        the original image will have a radius R that can reach from center to a
+        corner of the original image (thus R=r*rad(2)). Translating this new radius
+        into width and height is just doubling it (again imagine the larger circle
+        inscribed within the larger square with length S). With size taken care of,
+        the thickness is just R-r which simplifies to s/2 (sqrt(2)-1).
+    Android Studio seemed to just autoscale whatever I drew so I decided to just
+        impose negative margins on the circle = thickness of the circle. The color
+        set to same as background to effectively 'crop' original image into circular
+        image.
+      -->
+    <item
+        android:top="-11.48dp"
+        android:right="-11.48dp"
+        android:left="-11.48dp"
+        android:bottom="-11.48dp"
+        >
+        <shape android:shape="oval">
+            <stroke
+                android:width="11.4dp"
+                android:color="@android:color/secondary_text_light" />
+            <size
+                android:height="77.8dp"
+                android:width="77.8dp"/>
+            <solid
+                android:color="@null"/>
+        </shape>
+    </item>
+</layer-list>
+
