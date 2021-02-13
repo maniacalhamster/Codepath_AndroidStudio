@@ -7,6 +7,7 @@ import androidx.core.content.FileProvider;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -110,7 +111,10 @@ public class MainActivity extends AppCompatActivity {
 
                 // RESIZE BITMAP, see section below
                 // Load the taken image into a preview
-                ivPicture.setImageBitmap(takenImage);
+                // Use matrix to rotate 90 degrees since my phone thinks I'm taking a horizontal picture :\
+                Matrix rotation = new Matrix();
+                rotation.setRotate(90);
+                ivPicture.setImageBitmap(Bitmap.createBitmap(takenImage, 0, 0, takenImage.getWidth(), takenImage.getHeight(), rotation, true));
             } else { // Result was a failure
                 Toast.makeText(this, "Picture wasn't taken/loaded :(", Toast.LENGTH_SHORT).show();
             }
