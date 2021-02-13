@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCamera;
     private EditText etCaption;
     private Button btnPost;
+    private ImageView ivLogout;
 
     private File photoFile;
     public String photoFileName = "photo.jpg";
@@ -53,12 +54,18 @@ public class MainActivity extends AppCompatActivity {
         btnCamera = findViewById(R.id.btnCamera);
         etCaption = findViewById(R.id.etCaption);
         btnPost = findViewById(R.id.btnPost);
+        ivLogout = findViewById(R.id.ivLogout);
 
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launchCamera();
             }
+        });
+
+        ivLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { goLogout(); }
         });
 //      queryPosts();
         btnPost.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +85,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         
+    }
+
+    private void goLogout() {
+        Intent i = new Intent(this, LogoutActivity.class);
+        startActivity(i);
+
+        // Similar to Login Activity's goMainActivity - ensures you can't back out into main again
+        finish();
     }
 
     private void launchCamera() {

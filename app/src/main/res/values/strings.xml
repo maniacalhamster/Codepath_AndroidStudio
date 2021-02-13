@@ -12,4 +12,6 @@
     <string name="titlebar_text">Instagram text again as a title bar</string>
     <string name="dmBar_text">Instagram DM icon in title bar</string>
     <string name="heartBar_text">Instagram heart icon in title bar</string>
+    <string name="user_text">Instagram user icon in bottom to be nav bar for logging out</string>
+    <string name="logout_text">Log out</string>
 </resources>
