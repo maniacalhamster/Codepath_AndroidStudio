@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Finstagram</string>
+    <string name="app_name">Instagram</string>
     <string name="username">username</string>
     <string name="password">password</string>
     <string name="Login">Login</string>
     <string name="sign_up">Sign Up</string>
-    <string name="finstagram_desc">\'Finstagram\' written in billabong font</string>
+    <string name="instagram_desc">\'Instagram\' written in billabong font</string>
     <string name="post_desc">User takes a picture to post</string>
     <string name="desc">Enter a caption for your post</string>
     <string name="btn_Cam">Take Picture</string>
     <string name="post_text">Submit Post</string>
-    <string name="titlebar_text">Finstagram text again as a title bar</string>
+    <string name="titlebar_text">Instagram text again as a title bar</string>
 </resources>

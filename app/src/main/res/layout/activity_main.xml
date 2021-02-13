@@ -16,7 +16,7 @@
         android:layout_height="40dp"
         android:scaleType="fitStart"
         android:contentDescription="@string/titlebar_text"
-        android:src="@drawable/finstagram" />
+        android:src="@drawable/instagram" />
 
     <ImageView
         android:id="@+id/ivPicture"
