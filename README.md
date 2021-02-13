@@ -47,8 +47,9 @@ the variable that was supposed to load the progressbar was null when I debugged.
 I thought I would just rollback to before I tried to implement the progressbar
 with GIT but the progressbar still popped up (probably from untracked files).
 Even on new emulators that got a the parstagram app for the first tiem ran into
-this issue. Unfortunate that I didn't record a demo.gif before trying out the
-stretch stories :/
+this issue.
+
+Last minute fixed that issue
 
 ## Open-source libraries used
 
