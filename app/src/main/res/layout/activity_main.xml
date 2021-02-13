@@ -12,11 +12,43 @@
 
     <ImageView
         android:id="@+id/ivTitle"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
         android:scaleType="fitStart"
         android:contentDescription="@string/titlebar_text"
         android:src="@drawable/instagram" />
+
+    <ImageView
+        android:id="@+id/ivDMs"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:scaleType="fitStart"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/dmBar_text"
+        android:src="@drawable/direct"
+        />
+
+    <ImageView
+        android:id="@+id/ivHeart"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:scaleType="fitStart"
+        android:layout_toStartOf="@+id/ivDMs"
+        android:paddingEnd="20dp"
+        android:contentDescription="@string/heartBar_text"
+        android:src="@drawable/ufi_heart"
+        />
+
+    <ImageView
+        android:id="@+id/ivPost"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:scaleType="fitStart"
+        android:layout_toStartOf="@+id/ivHeart"
+        android:paddingEnd="20dp"
+        android:contentDescription="@string/heartBar_text"
+        android:src="@drawable/instagram_new_post_outline_24"
+        />
 
     <ImageView
         android:id="@+id/ivPicture"

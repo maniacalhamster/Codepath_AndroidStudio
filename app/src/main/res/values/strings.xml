@@ -10,4 +10,6 @@
     <string name="btn_Cam">Take Picture</string>
     <string name="post_text">Submit Post</string>
     <string name="titlebar_text">Instagram text again as a title bar</string>
+    <string name="dmBar_text">Instagram DM icon in title bar</string>
+    <string name="heartBar_text">Instagram heart icon in title bar</string>
 </resources>
