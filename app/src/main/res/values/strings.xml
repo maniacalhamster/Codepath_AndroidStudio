@@ -14,4 +14,9 @@
     <string name="heartBar_text">Instagram heart icon in title bar</string>
     <string name="user_text">Instagram user icon in bottom to be nav bar for logging out</string>
     <string name="logout_text">Log out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="compose">Compose</string>
+    <string name="profile">Profile</string>
 </resources>

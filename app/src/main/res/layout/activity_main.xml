@@ -6,103 +6,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:paddingTop="20dp"
-    android:paddingRight="20dp"
-    android:paddingLeft="20dp"
     android:orientation="vertical"
     android:background="@color/black">
 
-    <ImageView
-        android:id="@+id/ivTitle"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:scaleType="fitStart"
-        android:contentDescription="@string/titlebar_text"
-        android:src="@drawable/instagram" />
-
-    <ImageView
-        android:id="@+id/ivDMs"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:scaleType="fitStart"
-        android:layout_alignParentEnd="true"
-        android:contentDescription="@string/dmBar_text"
-        android:src="@drawable/direct"
-        />
-
-    <ImageView
-        android:id="@+id/ivHeart"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:scaleType="fitStart"
-        android:layout_toStartOf="@+id/ivDMs"
-        android:paddingEnd="20dp"
-        android:contentDescription="@string/heartBar_text"
-        android:src="@drawable/ufi_heart"
-        tools:ignore="RtlSymmetry" />
-
-    <ImageView
-        android:id="@+id/ivPost"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:scaleType="fitStart"
-        android:layout_toStartOf="@+id/ivHeart"
-        android:paddingEnd="20dp"
-        android:contentDescription="@string/heartBar_text"
-        android:src="@drawable/instagram_new_post_outline_24"
-        tools:ignore="RtlSymmetry" />
-
-    <ImageView
-        android:id="@+id/ivPicture"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/ivTitle"
-        android:contentDescription="@string/post_desc"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <Button
-        android:id="@+id/btnCamera"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+    <RelativeLayout
+        android:id="@+id/title_bar"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/ivPicture"
-        android:text="@string/btn_Cam" />
-
-    <EditText
-        android:id="@+id/etCaption"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_below="@id/btnCamera"
-        android:layout_marginTop="20dp"
-        android:includeFontPadding="true"
-        android:paddingStart="10dp"
-        android:paddingTop="5dp"
-        android:gravity="start|top"
-        android:background="@color/dark_grey"
-        android:hint="@string/desc"
-        android:autofillHints="@string/desc"
-        android:textColorHint="@color/light_grey"
-        android:textColor="@color/light_grey"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        tools:ignore="RtlSymmetry" />
-
-    <Button
-        android:id="@+id/btnPost"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/etCaption"
-        android:layout_marginTop="10dp"
-        android:text="@string/post_text" />
-
-    <ImageView
-        android:id="@+id/ivLogout"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="35dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:scaleType="fitStart"
+            android:contentDescription="@string/titlebar_text"
+            android:src="@drawable/nux_dayone_landing_logo" />
+
+        <ImageView
+            android:id="@+id/ivDMs"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="fitStart"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/dmBar_text"
+            android:src="@drawable/direct"
+            />
+
+        <ImageView
+            android:id="@+id/ivHeart"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="fitStart"
+            android:layout_marginEnd="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/ivDMs"
+            android:contentDescription="@string/heartBar_text"
+            android:src="@drawable/ufi_heart" />
+
+        <ImageView
+            android:id="@+id/ivPost"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="fitStart"
+            android:layout_marginEnd="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/ivHeart"
+            android:contentDescription="@string/heartBar_text"
+            android:src="@drawable/instagram_new_post_outline_24"
+            tools:ignore="RtlSymmetry" />
+    </RelativeLayout>
+
+    <FrameLayout
+       android:id="@+id/flContainer"
+       android:layout_marginTop="5dp"
+       android:layout_marginStart="10dp"
+       android:layout_marginEnd="10dp"
+       android:layout_marginBottom="0dp"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_below="@+id/title_bar"
+       android:layout_above="@id/bottomNavigation"
+       />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="unlabeled"
+        android:background="@color/black"
+        app:itemIconTint="@color/white"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/instagram_user_outline_24"
-        android:contentDescription="@string/user_text" />
-
+        app:menu="@menu/menu_bottom_navigation" />
 </RelativeLayout>

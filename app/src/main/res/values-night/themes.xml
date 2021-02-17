@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Finstagram" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/dark_grey</item>
+        <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/grey</item>
         <item name="colorOnPrimary">@color/light_grey</item>
         <!-- Secondary brand color. -->
