@@ -35,7 +35,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='.\demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'/>
+<img src='https://submissions.us-east-1.linodeobjects.com/android_university/jJwfSEye.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'/>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
