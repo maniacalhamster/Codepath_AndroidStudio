@@ -2,54 +2,53 @@
 
 **Parstagram** is a photo sharing app similar to Instagram but using Parse as its backend.
 
-Time spent: **14** hours spent in total
+Time spent: **9** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [x] User can sign up to create a new account using Parse authentication.
-- [x] User can log in and log out of his or her account.
-- [x] The current signed in user is persisted across app restarts.
-- [x] User can take a photo, add a caption, and post it to "Instagram".
+- [x] User can view the last 20 posts submitted to "Instagram".
+- [x] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
+- [x] User can pull to refresh the last 20 posts submitted to "Instagram".
 
 The following **optional** features are implemented:
 
 - [x] User sees app icon in home screen and styled bottom navigation view
 - [x] Style the feed to look like the real Instagram feed.
-- [ ] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse.
+- [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
+- [x] Show the username and creation time for each post.
+- [ ] User can tap a post to view post details, including timestamp and caption.
+- [ ] User Profiles
+      - [ ] Allow the logged in user to add a profile photo
+      - [x] Display the profile photo with each post
+      - [ ] Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts 
+- [ ] User can comment on a post and see all comments for each post in the post details screen.
+- [ ] User can like a post and see number of likes for each post in the post details screen.
+
+The following **additional** features are implemented:
+
+- [x] On compose, camera button is replaced with editText for caption and submit button once User has finished taking a picture
+- [x] Despite not being able to set pfp in app, they have a custom circle map applied (courtesy of trigonmetry)
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='.\demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Issues came up with creating an app icon, mostly from me not understanding what
-viewport dimensions were and an initial attempt to create the instagram icon 
-as a vector with hand inputted paths. I tried to use png files I downloaded off
-the web and from the provided instagram icons but the quality went down. Also
-tried online converters from png to svg, then importing android vector asset 
-with those svg but the fill and background always had issues. After realizing
-translating and scaling the icons was a big hassle, I found another
-[site](https://editor.method.ac) that made creating a B&W copy of the instagram
-icon a lot easier. Finding out adaptive icons take in 108x108 dp icon and 
-gaurantee the center 66x66 dp won't be touched by masking - from this
-[video](https://www.youtube.com/watch?v=5MHFYfXno9c] also helped a lot.
-
-A new issue came up when I tried to add a progres bar as a stretch story. Even
-though I set the progressbar to invisible, it still popped up and the value of
-the variable that was supposed to load the progressbar was null when I debugged.
-I thought I would just rollback to before I tried to implement the progressbar
-with GIT but the progressbar still popped up (probably from untracked files).
-Even on new emulators that got a the parstagram app for the first tiem ran into
-this issue.
-
-Last minute fixed that issue
+I had issues with getting the pictures to fit into squares within a RelativeLayout
+and resorted to layering the image within a ConstraintView first to impose a 
+constraint ratio.
+I started running into issues when a v23 version of my post_item was unkowingly
+created/used for my emulator that was eventually resolved with the help of TA Gian!
+Final note was my lack of foresight - viewing latest 20 posts and infinite 
+pagination would need at least 20 posts for the demo.gif, of which I heavily 
+lacked!
 
 ## Open-source libraries used
 
