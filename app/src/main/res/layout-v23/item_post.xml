@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivPfp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:foreground="@drawable/profile_pic"
+        android:layout_marginStart="16dp"
+        tools:src="@tools:sample/avatars"
+        />
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_toEndOf="@id/ivPfp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        tools:text="akar"
+        />
+
+    <ImageView
+        android:id="@+id/ivOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:scaleType="fitCenter"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:src="@drawable/ufi_more"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/postPicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/ivPfp">
+        <ImageView
+            android:id="@+id/ivPicture"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/ivLike"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/postPicture"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ufi_heart"
+        />
+
+    <ImageView
+        android:id="@+id/ivComment"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/postPicture"
+        android:layout_toEndOf="@id/ivLike"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/ufi_comment"
+        />
+
+    <ImageView
+        android:id="@+id/ivDirect"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/postPicture"
+        android:layout_toEndOf="@id/ivComment"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/direct"
+        />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/postPicture"
+        android:layout_marginEnd="8dp"
+        android:scaleType="fitCenter"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:src="@drawable/ufi_save"
+        />
+
+    <TextView
+        android:id="@+id/tvLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivLike"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        tools:text="7,419 likes"
+        />
+
+    <TextView
+        android:id="@+id/tvCaption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLikes"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/white"
+        android:maxLines="2"
+        android:ellipsize="end"
+        tools:text="Captions go here overflowing handled by going onto the next line for up to 2 lines, meaning the rest of this caption gets hidden"
+        />
+
+    <TextView
+        android:id="@+id/tvTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCaption"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/light_grey"
+        android:textSize="12sp"
+        tools:text="5 hours ago"
+        />
+
+</RelativeLayout>
