@@ -137,9 +137,13 @@ public class ComposeFragment extends Fragment {
                 Matrix rotation = new Matrix();
                 rotation.setRotate(90);
 
-                ivPicture.setImageBitmap(Bitmap.createBitmap(takenImage, 0, 0, takenImage.getWidth(), takenImage.getHeight(), rotation, true));
+                // ivPicture.setImageBitmap(Bitmap.createBitmap(takenImage, 0, 0, takenImage.getWidth(), takenImage.getHeight(), rotation, true));
                 // Emulator does not need the 90 degree rotation
-                // ivPicture.setImageBitmap(takenImage);
+                ivPicture.setImageBitmap(takenImage);
+
+                btnCamera.setVisibility(View.INVISIBLE);
+                etCaption.setVisibility(View.VISIBLE);
+                btnPost.setVisibility(View.VISIBLE);
             } else { // Result was a failure
                 Toast.makeText(getContext(), "Picture wasn't taken/loaded :(", Toast.LENGTH_SHORT).show();
             }
@@ -178,6 +182,9 @@ public class ComposeFragment extends Fragment {
                 Log.i(TAG, "Post save was successful!!");
                 etCaption.setText("");
                 ivPicture.setImageResource(0);
+                btnCamera.setVisibility(View.VISIBLE);
+                etCaption.setVisibility(View.INVISIBLE);
+                btnPost.setVisibility(View.INVISIBLE);
             }
         });
     }
