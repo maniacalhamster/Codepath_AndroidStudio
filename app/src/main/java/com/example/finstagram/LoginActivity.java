@@ -90,7 +90,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 Log.i(TAG, "Heading to main activity");
                 goMainActivity();
-                Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT).show();
             }
         });
     }
